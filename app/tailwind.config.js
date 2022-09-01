@@ -12,14 +12,14 @@ module.exports = {
         lightGray: "#FBFBFB",
       },
       fontSize: {
-        xxl: "56px",
-        xl: "36px",
-        l: "24px",
-        m: "20px",
-        s: "18px",
-        xs: "16px",
-        xxs: "14px",
-        xxxs: "12px",
+        xxl: "3.5rem", //56px
+        xl: "2.25", //36px
+        l: "1.5rem", //24px
+        m: "1.25rem", //20px
+        s: "1.125", //18px
+        xs: "1rem", //16px
+        xxs: "0.875rem", //14px
+        xxxs: "0.75rem", //12px
       },
     },
   },
