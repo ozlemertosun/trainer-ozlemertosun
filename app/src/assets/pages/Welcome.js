@@ -4,26 +4,33 @@ import background2 from "../img/welcome2.jpg";
 
 const Welcome = () => {
   return (
-    <div>
-      <div className="relative">
-        <div>
-          <img src={background1} />
-        </div>
-        <div className="absolute top-24">
-          <p className="text-curry bold text-xxl leading-none tracking-tighter ml-9">
-            Believe Yourself
-          </p>
-          <div className="flex items-center gap-2">
-            <hr className="h-[1px] border-none bg-sky w-8" />
-            <p className="text-sky bold text-s">Train like a pro</p>
-          </div>
+    <div
+      style={{
+        backgroundImage: `url(${background1})`,
+        backgroundSize: "cover",
+        backgroundPosition: "top center",
+      }}
+      className="h-screen bg-red-500 relative"
+    >
+      <div className="absolute top-44 z-50">
+        <p className="text-curry bold text-xxl leading-none tracking-tighter ml-9">
+          Believe Yourself
+        </p>
+        <div className="flex items-center gap-2">
+          <hr className="h-[1px] border-none bg-sky w-8" />
+          <p className="text-sky bold text-s">Train like a pro</p>
         </div>
       </div>
 
-      <div>
-        <img src={background2} />
-      </div>
-      <div className="fixed bottom-8 flex justify-center w-full ">
+      <div
+        style={{
+          backgroundImage: `url(${background2})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="absolute h-1/2 w-full left-0 bottom-0 z-10"
+      ></div>
+      <div className="fixed bottom-8 flex justify-center w-full z-30 ">
         <HomeButton />
       </div>
     </div>
