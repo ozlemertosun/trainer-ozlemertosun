@@ -24,5 +24,8 @@
   .regular{
     @apply font-normal
   }
+  .margin{
+    @apply my-10 mx-6
+  }
 }
 
