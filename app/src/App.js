@@ -1,10 +1,10 @@
 import "./App.css";
+import Welcome from "./assets/pages/Welcome";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header text-xxl">hej</header>
-      <p className="text-xxs">hej</p>
+      <Welcome />
     </div>
   );
 }
