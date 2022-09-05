@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Classes, { Carouselle } from "../components/Classes";
 import { AiFillStar } from "react-icons/ai";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+/* import Classes, { Carouselle } from "../components/Classes"; */
 
 const Home = () => {
   const [classes, setClasses] = useState([]);
@@ -27,10 +26,7 @@ const Home = () => {
 
   return (
     <div className="margin">
-      <div className="flex justify-between items-center mb-3">
-        <h2 className="text-big">Popular classes</h2>
-        <HiOutlineMenuAlt3 className="text-bigger text-darkGray" />
-      </div>
+      {/*   <div className="flex justify-between items-center mb-3"></div> */}
 
       <div className="w-full h-[450px]">
         <div

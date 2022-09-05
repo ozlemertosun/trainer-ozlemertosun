@@ -30,7 +30,7 @@ const Search = () => {
 
   return (
     <div className="margin">
-      <div className="z-50 relative">
+      <div className="z-40 relative">
         <Searchbar />
       </div>
       <section>
