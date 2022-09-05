@@ -5,7 +5,7 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="absolute z-50">
       <button onClick={() => navigate("/home")}>
         <AiOutlineArrowLeft />
       </button>
