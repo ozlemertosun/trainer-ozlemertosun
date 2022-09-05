@@ -34,11 +34,8 @@ const Searchbar = () => {
 
   const results = fuse.search(query);
   const classResults = query ? results.map((result) => result.item) : classes;
-  /*   function handleOnSearch({ currentTarget = {} }) {
-      const { value } = currentTarget;
-      setQuery(value);
-    } */
   const [visible, setVisible] = useState(false);
+
   function handleOnSearch({ currentTarget = {} }) {
     const { value } = currentTarget;
     setQuery(value);
@@ -49,36 +46,34 @@ const Searchbar = () => {
     }
   }
   return (
-    <div className="w-screen">
-      <h1 className="text-red-400 font-extrabold text-5xl">Searchbar</h1>
-
-      <div className="m-auto mt-10">
-        <form className="w-full search">
+    <div className="">
+      <div className="m-auto mt-10 relative">
+        <form className="search">
           <div className="flex items-center relative">
-            {classResults.length === 0 ? (
+            <AiOutlineSearch className="text-gray-500 text-xl absolute ml-6" />
+            {/*     {classResults.length === 0 ? (
               <AiOutlineSearch className="text-gray-500 text-xl absolute ml-6" />
             ) : (
               <AiOutlineClose className="text-gray-500 text-xl absolute ml-6" />
-            )}
+            )} */}
             <input
-              className="w-full border-gray-500 border-solid border-[1px] p-4 rounded-full pl-14 ring-0"
+              className="w-full border-darkGray border-solid border-[1px] p-4 rounded-full pl-14 ring-0 focus:border-curry outline-none bg-lightGray"
               type="text"
               value={query}
               onChange={handleOnSearch}
-              /*   onClick={onClick} */
               placeholder={"Search classes"}
             />
           </div>
         </form>
-        {/*    {showResults ? ( */}
+
         {visible && (
-          <ul className="dataResult">
+          <ul className="dataResult absolute bg-sky flex flex-col gap-5 w-full mt-4 pb-10">
             {classResults.slice(0.2).map((item) => {
               const { classDay, classDescription, className, id } = item;
               return (
                 <a key={id} href="">
                   <li className="character">
-                    <ul className=" w-full border-solid border-[1px] rounded-full p-8">
+                    <ul className=" w-full border-solid border-[1px] rounded-[50px] p-8 border-darkGray bg-lightGray hover:bg-curry">
                       <li>{classDay}</li>
                       <li className="truncate">{classDescription}</li>
                       <li>{className}</li>
@@ -89,7 +84,6 @@ const Searchbar = () => {
             })}
           </ul>
         )}
-        {/*       ) : null} */}
       </div>
     </div>
   );
