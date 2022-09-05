@@ -1,7 +1,7 @@
-import { AiFillStar } from "react-icons/ai";
 import { useEffect, useState } from "react";
-import Searchbar from "../components/Searchbar";
 import { Link } from "react-router-dom";
+import Searchbar from "../components/Searchbar";
+import Stars from "../components/Stars";
 
 const Search = () => {
   const [classes, setClasses] = useState([]);
@@ -48,13 +48,7 @@ const Search = () => {
               >
                 <div className="bg-curry absolute z-10 w-full bottom-0 p-4 rounded-tr-[40px]  flex flex-col gap-1">
                   <p className="truncate">{item.className}</p>
-                  <div className="flex gap-1">
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
-                  </div>
+                  <Stars />
                 </div>
               </div>
             </Link>
