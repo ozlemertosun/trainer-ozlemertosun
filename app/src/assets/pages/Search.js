@@ -1,6 +1,7 @@
 import { AiFillStar } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import Searchbar from "../components/Searchbar";
+import { Link } from "react-router-dom";
 
 const Search = () => {
   const [classes, setClasses] = useState([]);
@@ -36,7 +37,7 @@ const Search = () => {
         <h2 className="bold text-big mb-4 mt-6">Popular classes</h2>
         <div className="flex gap-5 overflow-x-scroll overflow-hidden z-0">
           {classes?.map((item, index) => (
-            <div key={index}>
+            <Link to={`/class/${item.id}`} key={index}>
               <div
                 className=" rounded-[25px] rounded-br-none overflow-hidden w-[150px] h-[170px] relative"
                 style={{
@@ -56,7 +57,7 @@ const Search = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
