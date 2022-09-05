@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Classes, { Carouselle } from "../components/Classes";
+import Classes, { Carouselle } from "./Classes";
 import { AiFillStar } from "react-icons/ai";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 

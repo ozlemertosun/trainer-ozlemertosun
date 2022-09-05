@@ -28,14 +28,15 @@ const Search = () => {
   }, []);
 
   return (
-    <div className="margin w-screen">
-      <Searchbar />
-
+    <div className="margin">
+      <div className="z-50 relative">
+        <Searchbar />
+      </div>
       <section>
-        <h2 className="bold text-big mb-4 mt-10">Popular classes</h2>
-        <div className="flex gap-5 overflow-x-scroll overflow-hidden">
-          {classes?.map((item) => (
-            <div>
+        <h2 className="bold text-big mb-4 mt-6">Popular classes</h2>
+        <div className="flex gap-5 overflow-x-scroll overflow-hidden z-0">
+          {classes?.map((item, index) => (
+            <div key={index}>
               <div
                 className=" rounded-[25px] rounded-br-none overflow-hidden w-[150px] h-[170px] relative"
                 style={{
@@ -62,14 +63,24 @@ const Search = () => {
 
       <section>
         <h2 className="bold text-big mb-4 mt-10">Popular Trainers</h2>
-        {trainers?.map((trainer) => (
-          <div>
-            <div className="w-[100px] h-[100px]">
-              <img src={trainer.asset.url} />
+        <article className="flex flex-col gap-4">
+          {trainers?.map((trainer, index) => (
+            <div key={index} className="flex fl gap-6">
+              <div
+                className="h-[100px] w-[100px] rounded-2xl"
+                style={{
+                  backgroundImage: `url(${trainer.asset.url})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
+              {/*   <div className="w-[60px] h-[60px]">
+                <img src={trainer.asset.url} />
+              </div> */}
+              <p className="bold mt-6">{trainer.trainerName}</p>
             </div>
-            <p className="bold">{trainer.trainerName}</p>
-          </div>
-        ))}
+          ))}
+        </article>
       </section>
     </div>
   );

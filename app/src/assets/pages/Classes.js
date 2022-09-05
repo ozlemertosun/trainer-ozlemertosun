@@ -54,7 +54,7 @@ const Classes = () => {
         ))}
       </div>
 
-      <Carouselle data={classes} />
+      {/*  <Carouselle data={classes} /> */}
     </div>
   );
 };
