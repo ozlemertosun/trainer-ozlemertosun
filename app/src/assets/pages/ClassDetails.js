@@ -40,7 +40,7 @@ const ClassDetails = () => {
 
   useEffect(() => {
     trainerData.filter((trainer) => {
-      if (trainer.trainerName === details.trainer.trainerName) {
+      if (trainer?.trainerName === details?.trainer?.trainerName) {
         setTrainerImg(trainer.asset.url);
       }
     });

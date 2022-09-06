@@ -20,7 +20,15 @@ const Navigation = () => {
           {location.pathname !== "/home" && <AiOutlineArrowLeft />}
         </button>
         <h1 className="flex-grow capitalize ml-4 text-licorice text-big">
-          {path === "home" ? "Popular classes" : path}
+          {path === "home"
+            ? "Popular classes"
+            : path === "schedule"
+            ? "My " + path
+            : location.pathname === "/search"
+            ? "search"
+            : path === path.substring("class")
+            ? ""
+            : path}
         </h1>
         <div></div>
         <motion.button
