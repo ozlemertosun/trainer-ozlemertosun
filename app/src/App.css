@@ -25,7 +25,7 @@
     @apply font-normal
   }
   .margin{
-    @apply my-10 mx-6
+    @apply  mx-6 mb-10 mt-20
   }
 }
 
