@@ -1,6 +1,6 @@
 const MyShedule = () => {
   return (
-    <div className="m-4">
+    <div className="margin">
       <ul className="">
         <a href="">
           {" "}

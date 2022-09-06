@@ -71,7 +71,7 @@ const ClassDetails = () => {
             </div>
           </div>
         </div>
-        <div className="margin">
+        <div className="mx-6 mt-10">
           <p className="font-bold text-smallMedium">
             {details?.classDay} - {details?.classTime}
           </p>
