@@ -26,8 +26,6 @@ const Home = () => {
 
   return (
     <div className="margin">
-      {/*   <div className="flex justify-between items-center mb-3"></div> */}
-
       <div className="w-full h-[450px]">
         <div
           className="h-full w-full relative rounded-[25px] overflow-hidden"
@@ -57,8 +55,8 @@ const Home = () => {
       <section>
         <h2 className="bold text-big mb-4 mt-10">Classes for you</h2>
         <div className="flex gap-5 overflow-x-scroll overflow-hidden">
-          {classes?.map((item) => (
-            <div>
+          {classes?.map((item, index) => (
+            <div key={index}>
               <div
                 className=" rounded-[25px] rounded-br-none overflow-hidden w-[150px] h-[170px] relative"
                 style={{
