@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 //pages
 import Welcome from "./assets/pages/Welcome";
 import Home from "./assets/pages/Home";
@@ -10,9 +10,11 @@ import MyShedule from "./assets/pages/MySchedule";
 import Navigation from "./assets/components/Navigation";
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
-      <Navigation />
+      {location.pathname !== "/" && <Navigation />}
+
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/home" element={<Home />} />

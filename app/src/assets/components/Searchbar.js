@@ -62,7 +62,9 @@ const Searchbar = () => {
               value={query}
               onChange={handleOnSearch}
               placeholder={"Search classes"}
+              /*  pattern={"[a-z]{3}"} */
             />
+            <span className="validity"></span>
           </div>
         </form>
 

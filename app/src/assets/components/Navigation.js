@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
@@ -10,14 +10,18 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const path = location.pathname.substring(1);
 
   return (
     <>
       <div className="z-50 text-darkGray p-5 text-bigger flex justify-between items-center fixed  left-0 right-0 top-0">
         <button onClick={() => navigate("/home")} className="text-big">
-          <AiOutlineArrowLeft />
+          {location.pathname !== "/home" && <AiOutlineArrowLeft />}
         </button>
-        <h1 className="flex-grow">{/* {`${}`} */}</h1>
+        <h1 className="flex-grow capitalize ml-4 text-licorice text-big">
+          {path === "home" ? "Popular classes" : path}
+        </h1>
         <div></div>
         <motion.button
           animate={{ rotate: open ? 90 : 0 }}
