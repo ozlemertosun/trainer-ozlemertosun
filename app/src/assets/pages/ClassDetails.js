@@ -44,7 +44,7 @@ const ClassDetails = () => {
         setTrainerImg(trainer.asset.url);
       }
     });
-  }, []);
+  }, [trainerData]);
 
   return (
     <div className="h-screen w-screen">
