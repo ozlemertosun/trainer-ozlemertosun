@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useParams } from "react-router-dom";
 //pages
 import Welcome from "./assets/pages/Welcome";
 import Home from "./assets/pages/Home";
@@ -11,6 +11,7 @@ import Navigation from "./assets/components/Navigation";
 
 function App() {
   const location = useLocation();
+  console.log(location);
   return (
     <div className="App">
       {location.pathname !== "/" && <Navigation />}
