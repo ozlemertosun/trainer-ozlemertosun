@@ -6,6 +6,7 @@ import Home from "./assets/pages/Home";
 import Search from "./assets/pages/Search";
 import ClassDetails from "./assets/pages/ClassDetails";
 import MyShedule from "./assets/pages/MySchedule";
+import Login from "./assets/pages/Login";
 //components
 import Navigation from "./assets/components/Navigation";
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/schedule" element={<MyShedule />} />
         <Route path="/class/:id" element={<ClassDetails />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<Welcome />} />
       </Routes>
     </div>

@@ -1,6 +1,6 @@
 const Login = () => {
   return (
-    <div>
+    <div className="margin">
       <div className="absolute top-44 z-50">
         <h1 className="text-curry bold text-biggest leading-none tracking-tighter ml-9">
           Believe Yourself
