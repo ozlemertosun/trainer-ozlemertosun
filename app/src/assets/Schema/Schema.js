@@ -9,6 +9,6 @@ export const schema = yup.object().shape({
   password: yup
     .string()
     .required("*Please enter your personal code to enter")
-    .min(3, "*kodeord skal indeholde minimum 4 karakterer")
-    .max(20, "*kodeord skal indeholde maximum 20 karakterer"),
+    .min(3, "*Passwrod must contain at least 3 characters")
+    .max(10, "*Password must contain a maximum of 10 characters"),
 });
