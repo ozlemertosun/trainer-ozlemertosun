@@ -1,10 +1,14 @@
-import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useNavigationType,
+} from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
-import NavLinks from "./NavLinks";
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -47,14 +51,16 @@ const Navigation = () => {
 
 const Overlay = ({ open, setOpen }) => {
   const navigate = useNavigate();
+
   const [userIsLoggedIn, setUserIsLoggedIn] = useState("");
+
   useEffect(() => {
     setUserIsLoggedIn(localStorage.getItem("token"));
   }, []);
 
   function handleForm() {
     localStorage.clear();
-    setUserIsLoggedIn("");
+    setUserIsLoggedIn();
     setOpen(!open);
   }
   function handleLogin() {
@@ -70,7 +76,23 @@ const Overlay = ({ open, setOpen }) => {
       className="z-40 fixed inset-0 bg-sky flex justify-center items-center"
     >
       <ul className="flex flex-col gap-10 text-bigger text-center">
-        <NavLinks open={open} setOpen={setOpen} />
+        <Link to="/home">
+          <motion.li title="Popular classes" onClick={() => setOpen(!open)}>
+            Home
+          </motion.li>
+        </Link>
+        <Link to="/search">
+          <motion.li title="Search" onClick={() => setOpen(!open)}>
+            Search
+          </motion.li>
+        </Link>
+        {userIsLoggedIn && (
+          <Link to="/schedule">
+            <motion.li title="My schedule" onClick={() => setOpen(!open)}>
+              My Schedule
+            </motion.li>
+          </Link>
+        )}
         {userIsLoggedIn ? (
           <button onClick={handleForm}>
             <motion.li>Log out</motion.li>

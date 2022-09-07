@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { AiFillStar } from "react-icons/ai";
+import Stars from "./Stars";
 
 export const Carouselle = ({ data }) => {
   return (
@@ -20,7 +20,6 @@ const Classes = () => {
       .then((res) => res.json())
       .then((res) => {
         setClasses(res);
-        /*   console.log(res); */
       });
   }, []);
 
@@ -42,19 +41,13 @@ const Classes = () => {
               <div className="bg-curry absolute z-10 w-full bottom-0 p-4 rounded-tr-[40px]  flex flex-col gap-1">
                 <p className="truncate">{item.className}</p>
                 <div className="flex gap-1">
-                  <AiFillStar />
-                  <AiFillStar />
-                  <AiFillStar />
-                  <AiFillStar />
-                  <AiFillStar />
+                  <Stars />
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-
-      {/*  <Carouselle data={classes} /> */}
     </div>
   );
 };

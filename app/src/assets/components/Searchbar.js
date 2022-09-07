@@ -6,8 +6,6 @@ import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 const Searchbar = () => {
   const [classes, setClasses] = useState([]);
   const [query, setQuery] = useState("");
-  //const [showResults, setShowResults] = useState(false);
-  //const onClick = () => setShowResults(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +13,6 @@ const Searchbar = () => {
         .then((res) => res.json())
         .then((res) => {
           setClasses(res);
-          //console.log(res);
         });
     };
     fetchData();
@@ -51,18 +48,12 @@ const Searchbar = () => {
         <form className="search">
           <div className="flex items-center relative">
             <AiOutlineSearch className="text-gray-500 text-xl absolute ml-6" />
-            {/*     {classResults.length === 0 ? (
-              <AiOutlineSearch className="text-gray-500 text-xl absolute ml-6" />
-            ) : (
-              <AiOutlineClose className="text-gray-500 text-xl absolute ml-6" />
-            )} */}
             <input
               className="w-full border-darkGray border-solid border-[1px] p-4 rounded-full pl-14 ring-0 focus:border-curry outline-none bg-lightGray"
               type="text"
               value={query}
               onChange={handleOnSearch}
               placeholder={"Search classes"}
-              /*  pattern={"[a-z]{3}"} */
             />
             <span className="validity"></span>
           </div>
