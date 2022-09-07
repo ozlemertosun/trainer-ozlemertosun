@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Stars from "../components/Stars";
-/* import Classes, { Carouselle } from "../components/Classes"; */
 
 const Home = () => {
   const [classes, setClasses] = useState([]);
@@ -14,7 +13,6 @@ const Home = () => {
         .then((res) => res.json())
         .then((res) => {
           setClasses(res);
-          // console.log(res);
         });
     };
     fetchData();
@@ -77,7 +75,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-      {/*       <Classes /> */}
     </div>
   );
 };

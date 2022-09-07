@@ -48,11 +48,6 @@ const Searchbar = () => {
         <form className="search">
           <div className="flex items-center relative">
             <AiOutlineSearch className="text-gray-500 text-xl absolute ml-6" />
-            {/*     {classResults.length === 0 ? (
-              <AiOutlineSearch className="text-gray-500 text-xl absolute ml-6" />
-            ) : (
-              <AiOutlineClose className="text-gray-500 text-xl absolute ml-6" />
-            )} */}
             <input
               className="w-full border-darkGray border-solid border-[1px] p-4 rounded-full pl-14 ring-0 focus:border-curry outline-none bg-lightGray"
               type="text"

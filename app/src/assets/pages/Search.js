@@ -13,7 +13,6 @@ const Search = () => {
         .then((res) => res.json())
         .then((res) => {
           setClasses(res);
-          // console.log(res);
         });
     };
     fetchData();
