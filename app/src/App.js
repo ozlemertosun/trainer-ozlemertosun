@@ -12,7 +12,6 @@ import Navigation from "./assets/components/Navigation";
 
 function App() {
   const location = useLocation();
-  console.log(location);
   return (
     <div className="App">
       {location.pathname !== "/" && <Navigation />}
