@@ -19,9 +19,6 @@ const NavLinks = ({ open, setOpen }) => {
           My Schedule
         </motion.li>
       </Link>
-      <Link to="">
-        <motion.li onClick={() => setOpen(!open)}>Log out</motion.li>
-      </Link>
     </>
   );
 };

@@ -1,6 +1,6 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
@@ -46,6 +46,21 @@ const Navigation = () => {
 };
 
 const Overlay = ({ open, setOpen }) => {
+  const navigate = useNavigate();
+  const [userIsLoggedIn, setUserIsLoggedIn] = useState("");
+  useEffect(() => {
+    setUserIsLoggedIn(localStorage.getItem("token"));
+  }, []);
+
+  function handleForm() {
+    localStorage.clear();
+    setUserIsLoggedIn("");
+    setOpen(!open);
+  }
+  function handleLogin() {
+    navigate("/login");
+    setTimeout(() => setOpen(!open), 250);
+  }
   return (
     <motion.div
       initial={{ y: "-100%" }}
@@ -56,6 +71,15 @@ const Overlay = ({ open, setOpen }) => {
     >
       <ul className="flex flex-col gap-10 text-bigger text-center">
         <NavLinks open={open} setOpen={setOpen} />
+        {userIsLoggedIn ? (
+          <button onClick={handleForm}>
+            <motion.li>Log out</motion.li>
+          </button>
+        ) : (
+          <button onClick={handleLogin}>
+            <motion.li>Log in</motion.li>
+          </button>
+        )}
       </ul>
     </motion.div>
   );
