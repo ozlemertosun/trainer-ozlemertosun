@@ -69,9 +69,6 @@ const Search = () => {
                   backgroundPosition: "center",
                 }}
               ></div>
-              {/*   <div className="w-[60px] h-[60px]">
-                <img src={trainer.asset.url} />
-              </div> */}
               <p className="bold mt-6">{trainer.trainerName}</p>
             </div>
           ))}

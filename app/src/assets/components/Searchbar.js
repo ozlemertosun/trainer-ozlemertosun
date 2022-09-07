@@ -6,8 +6,6 @@ import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 const Searchbar = () => {
   const [classes, setClasses] = useState([]);
   const [query, setQuery] = useState("");
-  //const [showResults, setShowResults] = useState(false);
-  //const onClick = () => setShowResults(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +13,6 @@ const Searchbar = () => {
         .then((res) => res.json())
         .then((res) => {
           setClasses(res);
-          //console.log(res);
         });
     };
     fetchData();
@@ -62,7 +59,6 @@ const Searchbar = () => {
               value={query}
               onChange={handleOnSearch}
               placeholder={"Search classes"}
-              /*  pattern={"[a-z]{3}"} */
             />
             <span className="validity"></span>
           </div>
