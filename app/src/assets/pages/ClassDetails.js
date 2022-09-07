@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Stars from "../components/Stars";
 
 const ClassDetails = () => {
@@ -76,9 +76,11 @@ const ClassDetails = () => {
                 {details?.trainer?.trainerName}
               </p>
             </div>
-            <button className="w-full py-4 rounded-full bg-curry uppercase font-semibold mt-5">
-              sign in
-            </button>
+            <Link to="/login">
+              <button className="w-full py-4 rounded-full bg-curry uppercase font-semibold mt-5">
+                sign in
+              </button>
+            </Link>
           </div>
         </div>
       </div>
